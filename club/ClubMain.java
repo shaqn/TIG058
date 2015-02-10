@@ -3,7 +3,7 @@ package myprogram.hmi.cli;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import tig058.handin01.registry.ClubRegistry;
+import TIG058.tig058.handin01.registry.ClubRegistry;
 import tig058.handin01.member.Member;
 import tig058.handin01.member.MemberAlphaComparator;
 import tig058.handin01.member.MemberAlphaFirstnameComparator;
