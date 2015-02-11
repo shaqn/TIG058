@@ -1,9 +1,9 @@
-package myprogram.hmi.cli;
+package club;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-import TIG058.tig058.handin01.registry.ClubRegistry;
+import tig058.handin01.registry.ClubRegistry;
 import tig058.handin01.member.Member;
 import tig058.handin01.member.MemberAlphaComparator;
 import tig058.handin01.member.MemberAlphaFirstnameComparator;
@@ -52,8 +52,8 @@ public class ClubMain {
 	cm.cr.storeMembers();
 	*/
 
-	ch.printMembers("%Karl%");
-	ch.printTeams();
+	ch.printMembers();
+/*	ch.printTeams();
 
 	ch.printTeamMembers("F01");
 	ch.printTeamMembers("D");
@@ -64,6 +64,7 @@ public class ClubMain {
 	ch.emailMember(1016);
 	ch.emailMember(1017);
 	ch.emailMember(1018);
+	*/
     }
 
 }

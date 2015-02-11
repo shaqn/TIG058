@@ -1,4 +1,4 @@
-package myprogram.hmi.cli;
+package club;
 
 import java.util.ArrayList;
 import java.util.Collections;

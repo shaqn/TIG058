@@ -1,6 +1,6 @@
-package myprogram.hmi.console;
+package club;
 
-import myprogram.hmi.cli.ClubHelper;
+//import myprogram.hmi.cli.ClubHelper;
 import com.sandklef.edu.ConsoleMenu.*;
 
 public class Menu {
@@ -14,6 +14,12 @@ public class Menu {
     public void run() {
 
    	ConsoleMenu menu = new ConsoleMenu("-----===< Club Manager >===-----");
+
+	menu.addMenuItem(new MenuItem(){
+		public void menuItemSelected(ConsoleMenuEvent e) { 
+		    System.out.println("du valde Mitt eget..."); } 
+	    },"Mitt eget alt" );
+
 	menu.addMenuItem(new MenuItem(){
 		public void menuItemSelected(ConsoleMenuEvent e) { 
 		    ch.printMembers(); } 
