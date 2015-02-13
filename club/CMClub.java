@@ -15,16 +15,16 @@ import tig058.handin01.log.Logger;
 public class CMClub {
 
     public static void printProp(String s, String prop) {
-	String propValue = System.getProperty(prop);
-	if (propValue!=null) {
-	    System.out.println(s + propValue );
-	}
+		String propValue = System.getProperty(prop);
+		if (propValue!=null) {
+		    System.out.println(s + propValue );
+		}
     }
 
     public static void main(String[] args) {
-	final ClubHelper ch = new ClubHelper();
-	Menu m = new Menu(ch);
-	m.run();
+		final ClubHelper ch = new ClubHelper();
+		Menu m = new Menu(ch);
+		m.run();
 
     }
 
