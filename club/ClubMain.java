@@ -19,7 +19,13 @@ public class ClubMain {
     }
 
     public static void main(String[] args) {
-		
+		System.out.println(" -----===< Club Manager >===-----");
+		printProp("  User:       ", "user.name");
+		printProp("  OS arch:    ", "os.arch");
+		printProp("  OS name:    ", "os.name");
+		printProp("  OS version: ", "os.version");
+		System.out.println(" -----=====================-----");
+		System.out.println("");
 
 	//	Logger.setDebugLevel();
 
