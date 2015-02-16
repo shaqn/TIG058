@@ -19,7 +19,7 @@ public class ClubMain {
     }
 
     public static void main(String[] args) {
-		System.out.println(" -----===<Welcome to the Club Manager >===-----");
+		System.out.println(" -----===< Club Manager >===-----");
 		printProp("  User:       ", "user.name");
 		printProp("  OS arch:    ", "os.arch");
 		printProp("  OS name:    ", "os.name");
