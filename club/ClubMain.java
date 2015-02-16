@@ -14,7 +14,7 @@ public class ClubMain {
     public static void printProp(String s, String prop) {
 		String propValue = System.getProperty(prop);
 		if (propValue!=null) {
-	    	System.out.println(s + propValue );
+		    System.out.println(s + propValue );
 		}
     }
 
@@ -29,7 +29,7 @@ public class ClubMain {
 
 	//	Logger.setDebugLevel();
 
-	ClubHelper ch = new ClubHelper();
+		ClubHelper ch = new ClubHelper();
 	//	System.out.println("Should be a menu here");
 	
 	  // System.out.println(" ... let's assume user wanted to print teams");
@@ -52,7 +52,7 @@ public class ClubMain {
 	cm.cr.storeMembers();
 	*/
 
-	ch.printMembers();
+		ch.printMembers();
 /*	ch.printTeams();
 
 	ch.printTeamMembers("F01");

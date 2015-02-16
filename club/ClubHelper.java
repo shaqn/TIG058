@@ -23,8 +23,29 @@ public class ClubHelper {
 		Console console = System.console();
 		String input = console.readLine(s);
 		return input;
-	    }
+    }
+
+    public void printTeams() {
+		Logger.debugM();
+		ArrayList<String> teams = 
+		    cr.getTeams();
+	
+		System.out.print("Teams: ");
+		for (String team: teams) {
+		    System.out.print(team + " ");
 		}
+		System.out.println("");
+    }
+
+    public void printMembers() {
+		Logger.debugM();
+		ArrayList<Member> members = 
+		    cr.getMembers();
+		System.out.println("Members:");
+		for (Member m: members) {
+		    System.out.println(m);
+		}
+    }
 
     public void printMembersAlpha() {
 		Logger.debugM();
@@ -35,99 +56,97 @@ public class ClubHelper {
 		System.out.println("Members:");
 		for (Member m: members) {
 		    System.out.println(m);
-		} //Efternamn= alt 1
-	    }
-
-    public void printTeams() {
-		Logger.debugM();
-		ArrayList<String> teams = 
-	    cr.getTeams();
-	
-		System.out.print("Teams: ");
-		for (String team: teams) {
-	    System.out.print(team + " ");
-	}
-		System.out.println("");
-    } //Lag tillhörigheter? alt 4
-
-    public void printMembers() {
-		Logger.debugM();
-		ArrayList<Member> members = 
-	    cr.getMembers();
-		System.out.println("Members:");
-		for (Member m: members) {
-	    System.out.println(m);
-	}
-    } //alla medlemmar i ett lag alt 5 
+		}
+    }
 
     public void printMembersAlphaFirstName() {
 		Logger.debugM();
-		ArrayList<Member> members = cr.getMembers();
+		ArrayList<Member> members = 
+			cr.getMembers();
 		Collections.sort(members, new MemberAlphaFirstnameComparator());
 
 		System.out.println("Members:");
 		for (Member m: members) {
 		    System.out.println(m);
-	} 	// Förnamn= alt 2
+		}
     }
 
- alt
+    public void printMembers(String s) {
+		Logger.debugM();
+		ArrayList<Member> members = 
+			cr.getMembers(s);
+		Collections.sort(members, new MemberAlphaComparator());
+
+		System.out.println("Members:");
+		for (Member m: members) {
+		    System.out.println(m);
+		}
+    }
 
     public void printTeamMembers(String team) {
-	Logger.debugM();
-	ArrayList<Member> members = cr.getTeamMembers(team);
-	Collections.sort(members, new MemberAlphaComparator());
+		Logger.debugM();
+		ArrayList<Member> members = 
+			cr.getTeamMembers(team);
+		Collections.sort(members, new MemberAlphaComparator());
 
-	System.out.println("Members in " + team + ":");
-	for (Member m: members) {
-	    System.out.println(m);
-	} //alla medlemmar i ett lag 5
+		System.out.println("Members in " + team + ":");
+		for (Member m: members) {
+		    System.out.println(m);
+		}
     }
 
 
     public void emailMember(int id) {
-	Member m = cr.getMember(id);
-	if (m==null) { return ; }
-	
-	emailMember(m);
-    } // ID 3
-
+		Member m = cr.getMember(id);
+		if (m==null) { 
+			return ; 
+		}
+		
+		emailMember(m);
+   	}
 
     public void emailMember(Member m) {
-	Logger.debugM();
+		Logger.debugM();
 
-	ArrayList<Member> parents = cr.getAdults(m);
+		ArrayList<Member> parents = 
+					cr.getAdults(m);
 
-	System.out.print("Email to " + m.getName() + "");
-	if (parents==null || parents.size()==0) { 
-	    System.out.println("<" + m.getEmail() + ">"); 
-	} else {
-	    System.out.println(" via parents:");
-	    for (Member p: parents) {
-		System.out.println(" * " + p.getName() + "<" + p.getEmail() + ">");
-	    }
-	} //Emails= alt 7
+		System.out.print("Email to " + m.getName() + "");
+		if (parents==null || parents.size()==0) { 
+		    System.out.println("<" + m.getEmail() + ">"); 
+		} 
+		else {
+		    System.out.println(" via parents:");
+		    for (Member p: parents) {
+				System.out.println(" * " + p.getName() + "<" + p.getEmail() + ">");
+	   		}
+		}
     }
 
     public void printParents(int id) {
-	Member m = cr.getMember(id);
-	if (m==null) { return ; }
-	
-	printParents(m);
-    } // föräldrar i ett lag =alt 6
-
-    public void printParents(Member m) {
-	Logger.debugM();
-
-	ArrayList<Member> parents = cr.getParents(m);
-	System.out.println("Parents to " + m.getName() + ":");
-	if (parents==null || parents.size()==0) { System.out.println(" * <none>"); return ; }
-	
-	for (Member p: parents) {
-	    System.out.println(" * " + p);
-	}
+		Member m = 
+			cr.getMember(id);
+		if (m==null) { 
+			return ; 
+		}
+		
+		printParents(m);
     }
 
-    
+    public void printParents(Member m) {
+		Logger.debugM();
+
+		ArrayList<Member> parents = 
+				cr.getParents(m);
+		System.out.println("Parents to " + m.getName() + ":");
+		if (parents==null || parents.size()==0) { 
+			System.out.println(" * <none>"); 
+			return ; 
+		}
+	
+		for (Member p: parents) {
+		    System.out.println(" * " + p);
+		}
+    }
 
 }
