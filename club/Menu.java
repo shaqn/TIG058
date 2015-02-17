@@ -6,6 +6,7 @@ import com.sandklef.edu.ConsoleMenu.*;
 public class Menu {
     
     ClubHelper ch ;
+
     
     public Menu(ClubHelper c) {
 		ch = c;

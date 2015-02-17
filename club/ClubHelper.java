@@ -13,6 +13,11 @@ import java.io.Console;
 public class ClubHelper {
 
     private ClubRegistry cr;
+    private Member mem;
+
+    public String formaterat(Member m){
+    	return String.format("ID: %-10d Name: %-15s", m.getId(), m.getName(), m.getTeam());
+    }
 
     public ClubHelper() {
 		Logger.debug("Init system");
@@ -24,6 +29,18 @@ public class ClubHelper {
 		String input = console.readLine(s);
 		return input;
     }
+     public void printMembersAlphaFirstName() {
+		Logger.debugM();
+		ArrayList<Member> members = 
+			cr.getMembers();
+		Collections.sort(members, new MemberAlphaFirstnameComparator());
+
+		System.out.println("Members:");
+		for (Member m: members) {
+		    System.out.println(formaterat(m));
+		}
+    } 
+
     public void printMembersAlpha() {
 		Logger.debugM();
 		ArrayList<Member> members = 
@@ -32,21 +49,11 @@ public class ClubHelper {
 
 		System.out.println("Members:");
 		for (Member m: members) {
-		    System.out.println(m);
+		    System.out.println(formaterat(m));
 		}
     }
 
-    public void printMembersAlphaFirstName() {
-		Logger.debugM();
-		ArrayList<Member> members = 
-			cr.getMembers();
-		Collections.sort(members, new MemberAlphaFirstnameComparator());
-
-		System.out.println("Members:");
-		for (Member m: members) {
-		    System.out.println(m);
-		}
-    }
+ 
 
     public void printTeams() {
 		Logger.debugM();
@@ -66,7 +73,7 @@ public class ClubHelper {
 		    cr.getMembers();
 		System.out.println("Members:");
 		for (Member m: members) {
-		    System.out.println(m);
+		    System.out.println(formaterat(m));
 		}
     }
 
@@ -76,13 +83,19 @@ public class ClubHelper {
 		ArrayList<Member> members = 
 			cr.getMembers(s);
 		Collections.sort(members, new MemberAlphaComparator());
+
+		System.out.println("Members:");
+		for (Member m: members) {
+		    System.out.println(formaterat(m));
+		}
+
 	}
 
 
     public void printTeamMembers(String team) {
 			Logger.debugM();
 			ArrayList<Member> members = 
-				cr.getMembers(team);
+				cr.getTeamMembers(team);
 			Collections.sort(members, new MemberAlphaComparator());
 
 			System.out.println("Members in " + team + ":");
@@ -92,27 +105,27 @@ public class ClubHelper {
 	    }
 
 
-/*    public void idMember(int id) {
+	/*   public void emailMember(int id) {
 			Member m = cr.getMember(id);
 			if (m==null) { 
 				return ; 
 			}
 			emailMember(m);
 			System.out.println("Members:");
-			for (Member m: members) {
-			    System.out.println(m);
+			for (Member mem: members) {
+			    System.out.println(formaterat(m));
 			}
-	    }*/
+	    }
 
 
-    public void emailMember(int id) {
+ /*   public void emailMember(int id) {
 		Member m = cr.getMember(id);
 		if (m==null) { 
 			return ; 
 		}
 		
 		emailMember(m);
-   	}
+   	} */
 
     public void emailMember(Member m) {
 		Logger.debugM();
