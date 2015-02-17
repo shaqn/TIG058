@@ -7,7 +7,6 @@ import tig058.handin01.registry.ClubRegistry;
 import tig058.handin01.member.Member;
 import tig058.handin01.member.MemberAlphaComparator;
 import tig058.handin01.member.MemberAlphaFirstnameComparator;
-import tig058.handin01.member.MemberTeamComparator;
 import tig058.handin01.log.Logger;
 
 public class ClubMain {

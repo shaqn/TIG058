@@ -6,7 +6,6 @@ import tig058.handin01.registry.ClubRegistry;
 import tig058.handin01.member.Member;
 import tig058.handin01.member.MemberAlphaComparator;
 import tig058.handin01.member.MemberAlphaFirstnameComparator;
-import tig058.handin01.member.MemberTeamComparator;
 import tig058.handin01.log.Logger;
 import java.io.Console;
 
@@ -25,29 +24,6 @@ public class ClubHelper {
 		String input = console.readLine(s);
 		return input;
     }
-
-    public void printTeams() {
-		Logger.debugM();
-		ArrayList<String> teams = 
-		    cr.getTeams();
-	
-		System.out.print("Teams: ");
-		for (String team: teams) {
-		    System.out.print(team + " ");
-		}
-		System.out.println("");
-    }
-
-    public void printMembers() {
-		Logger.debugM();
-		ArrayList<Member> members = 
-		    cr.getMembers();
-		System.out.println("Members:");
-		for (Member m: members) {
-		    System.out.println(m);
-		}
-    }
-
     public void printMembersAlpha() {
 		Logger.debugM();
 		ArrayList<Member> members = 
@@ -72,31 +48,41 @@ public class ClubHelper {
 		}
     }
 
+    public void printTeams() {
+		Logger.debugM();
+		ArrayList<String> teams = 
+		    cr.getTeams();
+	
+		System.out.print("Teams: ");
+		for (String team: teams) {
+		    System.out.print(team + " ");
+		}
+		System.out.println("");
+    }
+
+    public void printMembers() {
+		Logger.debugM();
+		ArrayList<Member> members = 
+		    cr.getMembers();
+		System.out.println("Members:");
+		for (Member m: members) {
+		    System.out.println(m);
+		}
+    }
+
+
     public void printMembers(String s) {
 		Logger.debugM();
 		ArrayList<Member> members = 
 			cr.getMembers(s);
 		Collections.sort(members, new MemberAlphaComparator());
-
-<<<<<<< HEAD
-    public void printTeams(String team) {
-			Logger.debugM();
-			ArrayList<String> teams = 
-			    cr.getTeams();
-			Collections.sort(members, new MemberTeamComparator());
-
-			System.out.print("Teams: ");
-			for (String k: teams) {
-			    System.out.print(team + " ");
-			}
-
-		 }
+	}
 
 
     public void printTeamMembers(String team) {
 			Logger.debugM();
 			ArrayList<Member> members = 
-				cr.getTeamMembers();
+				cr.getMembers(team);
 			Collections.sort(members, new MemberAlphaComparator());
 
 			System.out.println("Members in " + team + ":");
@@ -106,31 +92,17 @@ public class ClubHelper {
 	    }
 
 
-    public void idMember(int id) {
+/*    public void idMember(int id) {
 			Member m = cr.getMember(id);
 			if (m==null) { 
 				return ; 
 			}
 			emailMember(m);
-	   	}
-=======
-		System.out.println("Members:");
-		for (Member m: members) {
-		    System.out.println(m);
-		}
-    }
-
-    public void printTeamMembers(String team) {
-		Logger.debugM();
-		ArrayList<Member> members = 
-			cr.getTeamMembers(team);
-		Collections.sort(members, new MemberAlphaComparator());
-
-		System.out.println("Members in " + team + ":");
-		for (Member m: members) {
-		    System.out.println(m);
-		}
-    }
+			System.out.println("Members:");
+			for (Member m: members) {
+			    System.out.println(m);
+			}
+	    }*/
 
 
     public void emailMember(int id) {
@@ -141,7 +113,6 @@ public class ClubHelper {
 		
 		emailMember(m);
    	}
->>>>>>> parent of 1aafa19... Vet inte vad men tydligen 10 förändringar
 
     public void emailMember(Member m) {
 		Logger.debugM();
