@@ -15,6 +15,11 @@ public class Menu {
 
 	   	ConsoleMenu menu = new ConsoleMenu("-----===< Club Manager >===-----");
 
+	   		menu.addMenuItem(new MenuItem(){
+			public void menuItemSelected(ConsoleMenuEvent e) { 
+			   System.out.println();
+			} 
+		}," " );
 
 	   	menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
