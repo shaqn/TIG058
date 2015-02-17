@@ -25,8 +25,8 @@ public class ClubMain {
 		printProp("  OS arch:    ", "os.arch");
 		printProp("  OS name:    ", "os.name");
 		printProp("  OS version: ", "os.version");
-		System.out.println("-----=====================-----");
-		System.out.println(" ");
+		System.out.println(" -----=====================-----");
+		System.out.println("");
 
 	//	Logger.setDebugLevel();
 

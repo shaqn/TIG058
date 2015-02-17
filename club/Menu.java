@@ -15,28 +15,32 @@ public class Menu {
 
 	   	ConsoleMenu menu = new ConsoleMenu("-----===< Club Manager >===-----");
 
+<<<<<<< HEAD
 	   		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
 			   System.out.println();
 			} 
 		}," " );
 
+=======
+>>>>>>> parent of 1aafa19... Vet inte vad men tydligen 10 förändringar
 	   	menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
-			    ch.printMembersAlphaFirstName(); 
+			    ch.printMembersAlpha(); 
 			} 
-		},"List members in order of name" );	////Done MEN måste vara menyalternativ 1
+		},"List members in Alphabetical order" );	//Behöver fixas så det blir ordning på förnamn
 
 		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
 			    ch.printMembersAlpha(); 
 			} 
-		},"List members in order of surname" );  //Done MEN måste vara menyalternativ 2
+		},"Medlemmar i ordning på efternman" );  //Behöver fixas så det blir ordning på efternamn
 
 		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
 			    ch.printMembers(); 
 			} 
+<<<<<<< HEAD
 		},"List members in order of ID" );
 		
 		menu.addMenuItem(new MenuItem(){
@@ -45,6 +49,10 @@ public class Menu {
 			} 
 		},"List members in order of Team" );
 		
+=======
+		},"List members" );
+
+>>>>>>> parent of 1aafa19... Vet inte vad men tydligen 10 förändringar
 		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
 			    String input = ch.askUser("Enter search string for team member: ");
