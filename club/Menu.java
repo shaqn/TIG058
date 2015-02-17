@@ -15,23 +15,24 @@ public class Menu {
 
 	   	ConsoleMenu menu = new ConsoleMenu("-----===< Club Manager >===-----");
 
+
 	   	menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
-			    ch.printMembersAlpha(); 
+			    ch.printMembersAlphaFirstName(); 
 			} 
-		},"List members in Alphabetical order" );	//Behöver fixas så det blir ordning på förnamn
+		},"List members in order of name" );	////Done MEN måste vara menyalternativ 1
 
 		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
 			    ch.printMembersAlpha(); 
 			} 
-		},"Medlemmar i ordning på efternman" );  //Behöver fixas så det blir ordning på efternamn
+		},"List members in order of surname" );  //Done MEN måste vara menyalternativ 2
 
 		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
 			    ch.printMembers(); 
 			} 
-		},"List members" );
+		},"List members in order of ID" );
 
 		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
