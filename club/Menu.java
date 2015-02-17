@@ -38,14 +38,20 @@ public class Menu {
 			    ch.printMembers(); 
 			} 
 		},"List members in order of ID" );
-
+		
 		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
-			    String input = ch.askUser("Enter search string, you bastard: ");
+			    ch.printTeams(); 
+			} 
+		},"List members in order of Team" );
+		
+		menu.addMenuItem(new MenuItem(){
+			public void menuItemSelected(ConsoleMenuEvent e) { 
+			    String input = ch.askUser("Enter search string for team member: ");
 			    String search = "%" + input.trim() + "%";
 			    ch.printMembers(search); 
 			}
-		},"Search for member" );
+		},"List members in order of " );
 
 		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 

@@ -70,17 +70,24 @@ public class ClubHelper {
 			}
 	    }
 
-    public void printTeams() {
+    public void printTeams(String team) {
 			Logger.debugM();
 			ArrayList<String> teams = 
 			    cr.getTeams();
-		
+			ArrayList<Member> members = 
+				cr.getTeamMembers(team);
+			Collections.sort(members, new MemberAlphaComparator());
+
 			System.out.print("Teams: ");
-			for (String team: teams) {
+			for (String k: teams) {
 			    System.out.print(team + " ");
 			}
+			for (Member m: members) {
+			    System.out.println(m);
+			}
 			System.out.println("");
-	    }
+	 }
+
 
     public void printTeamMembers(String team) {
 			Logger.debugM();
