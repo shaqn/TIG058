@@ -41,7 +41,7 @@ public class Menu {
 		
 		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
-			    ch.printTeams(); 
+			    ch.printTeams(team); 
 			} 
 		},"List members in order of Team" );
 		

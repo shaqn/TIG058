@@ -6,6 +6,7 @@ import tig058.handin01.registry.ClubRegistry;
 import tig058.handin01.member.Member;
 import tig058.handin01.member.MemberAlphaComparator;
 import tig058.handin01.member.MemberAlphaFirstnameComparator;
+import tig058.handin01.member.MemberTeamComparator;
 import tig058.handin01.log.Logger;
 import java.io.Console;
 
@@ -74,25 +75,20 @@ public class ClubHelper {
 			Logger.debugM();
 			ArrayList<String> teams = 
 			    cr.getTeams();
-			ArrayList<Member> members = 
-				cr.getTeamMembers(team);
-			Collections.sort(members, new MemberAlphaComparator());
+			Collections.sort(members, new MemberTeamComparator());
 
 			System.out.print("Teams: ");
 			for (String k: teams) {
 			    System.out.print(team + " ");
 			}
-			for (Member m: members) {
-			    System.out.println(m);
-			}
-			System.out.println("");
-	 }
+
+		 }
 
 
     public void printTeamMembers(String team) {
 			Logger.debugM();
 			ArrayList<Member> members = 
-				cr.getTeamMembers(team);
+				cr.getTeamMembers();
 			Collections.sort(members, new MemberAlphaComparator());
 
 			System.out.println("Members in " + team + ":");
