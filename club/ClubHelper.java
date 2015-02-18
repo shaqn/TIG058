@@ -16,7 +16,7 @@ public class ClubHelper {
     private Member mem;
 
     public String formaterat(Member m){
-    	return String.format("ID: %-10d Name: %-15s", m.getId(), m.getName(), m.getTeam());
+    	return String.format("ID: %-10d Name: %-20s Team: %-15s", m.getId(), m.getName(), m.getTeam());
     }
 
     public ClubHelper() {
@@ -57,16 +57,13 @@ public class ClubHelper {
 
     public void printTeams() {
 		Logger.debugM();
-		ArrayList<String> teams = 
-		    cr.getTeams();
 		ArrayList<Member> members = 
-		    cr.getMembers();
-		Collections.sort(members, new MemberAlphaFirstnameComparator());
-		System.out.print("Teams: ");
-		for (String team: teams) {
-		    System.out.print(team + " ");
+			cr.getMembers();
+		Collections.sort(members, new MemberTeamComparator());
+		System.out.print("All members sorted by Teams: \n" );
+		for (Member m: members) {
+		    System.out.println(formaterat(m) + " ");
 		}
-		System.out.println("");
     }
 
     public void printMembers() {
@@ -92,8 +89,21 @@ public class ClubHelper {
 		}
 
 	}
+    public void printTeamMembers() {
+		Logger.debugM();
+		String team = askUser("What team do you want to list? ");
+		ArrayList<Member> members = 
+			cr.getTeamMembers(team);
+		//Collections.sort(members, new MemberAlphaComparator());
 
+		System.out.println("Members in "+team+":");
+		for (Member m: members) {
+		    System.out.println(formaterat(m));
+		}
 
+	}
+
+/*
     public void printTeamMembers(String team) {
 			Logger.debugM();
 			ArrayList<Member> members = // Returns a list of all the members playing in the team specified by the caller
@@ -105,7 +115,7 @@ public class ClubHelper {
 			    System.out.println(m);
 			}
 	    }     
-
+*/
 
 	/*   public void emailMember(int id) {
 			Member m = cr.getMember(id);

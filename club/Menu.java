@@ -45,19 +45,27 @@ public class Menu {
 		
 		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
-			    ch.printTeamMembers(); 
+			    ch.printTeams();
+			    
 			} 
 		},"List members in order of Team" ); //Alternatv 4= Lista medlemmar i ordning efter lag
 
-menu.addMenuItem(new MenuItem(){
+		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
-			    ch.printTeams(); 
+			    ch.printTeamMembers();
+			    
 			} 
-		},"List parents in a team" ); //Alternativ 6= Lista alla föräldrar i  ett lag
+		},"List members of a Team" ); //Alternatv 4= Lista medlemmar i ordning efter lag
 
-menu.addMenuItem(new MenuItem(){
-			public void menuItemSelected(ConsoleMenuEvent e) { 
-			    ch.printTeams(); 
+		menu.addMenuItem(new MenuItem(){
+					public void menuItemSelected(ConsoleMenuEvent e) { 
+					    ch.printTeams(); 
+					} 
+				},"List parents in a team" ); //Alternativ 6= Lista alla föräldrar i  ett lag
+
+		menu.addMenuItem(new MenuItem(){
+					public void menuItemSelected(ConsoleMenuEvent e) { 
+					    ch.printTeams(); 
 			} 
 		},"List e-mails for a member " ); //Alternativ 7= Lista e-post adresser -> om medlemmen skall e-post användas, om inte skall föräldrarnas e-post användas
 
