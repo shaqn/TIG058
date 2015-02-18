@@ -45,7 +45,7 @@ public class Menu {
 		
 		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
-			    ch.printTeams(); 
+			    ch.printTeamMembers(); 
 			} 
 		},"List members in order of Team" ); //Alternatv 4= Lista medlemmar i ordning efter lag
 

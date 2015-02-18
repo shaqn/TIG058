@@ -59,7 +59,9 @@ public class ClubHelper {
 		Logger.debugM();
 		ArrayList<String> teams = 
 		    cr.getTeams();
-	
+		ArrayList<Member> members = 
+		    cr.getMembers();
+		Collections.sort(members, new MemberAlphaFirstnameComparator());
 		System.out.print("Teams: ");
 		for (String team: teams) {
 		    System.out.print(team + " ");
@@ -94,7 +96,7 @@ public class ClubHelper {
 
     public void printTeamMembers(String team) {
 			Logger.debugM();
-			ArrayList<Member> members = 
+			ArrayList<Member> members = // Returns a list of all the members playing in the team specified by the caller
 				cr.getTeamMembers(team);
 			Collections.sort(members, new MemberAlphaComparator());
 
@@ -102,7 +104,7 @@ public class ClubHelper {
 			for (Member m: members) {
 			    System.out.println(m);
 			}
-	    }
+	    }     
 
 
 	/*   public void emailMember(int id) {
