@@ -16,11 +16,11 @@ public class ClubHelper {
     private Member mem;
 
     public String formaterat(Member m){
-    	return String.format("ID: %-10d Name: %-25s Team: %-10s Parents: %s %-15s", m.getId(), m.getName(), m.getTeam(), m.getParents(), m.isParent());
+    	return String.format("ID: %-10d Name: %-25s Age: %-10d Team: %-10s Parents: %s %-15s", m.getId(), m.getName(), m.getAgeThisYear(), m.getTeam(), m.getParents(), m.isParent());
     }
 
     public String formaterar(Member m){
-    	return String.format("ID: %-10d Name: %-25s Team: %-10s", m.getId(), m.getName(), m.getTeam());
+    	return String.format("ID: %-10d Name: %-25s Age: %-10d Team: %-10s", m.getId(), m.getName(), m.getAgeThisYear(), m.getTeam());
     }
 
 
@@ -33,6 +33,27 @@ public class ClubHelper {
 		Console console = System.console();
 		String input = console.readLine(s);
 		return input;
+    }
+      public void printMembersAll() {  	 // --members
+		Logger.debugM();
+		ArrayList<Member> members = 
+			cr.getMembers();
+
+		System.out.println("All Members:");
+		for (Member m: members) {
+		    System.out.println(formaterar(m));
+		}
+    }
+
+    public void printTeamsAll() {  	 // --teams
+		Logger.debugM();
+		ArrayList<String> teams = 
+			cr.getTeams();
+
+		System.out.println("All Teams: \n");
+		for (String m: teams) {
+		    System.out.println(m);
+		}
     }
      public void printMembersAlphaFirstName() {  	 //Menyalt. 1
 		Logger.debugM();
@@ -109,18 +130,28 @@ public class ClubHelper {
     }
 
 
-    public void printMembers(String s) {
+ /*   public void printEmail() {
 		Logger.debugM();
 		ArrayList<Member> members = 
-			cr.getMembers(s);
-		Collections.sort(members, new MemberAlphaComparator());
+			cr.getMembers();
+		Collections.sort(members, new MemberEmailComparator());
 
-		System.out.println("Members:");
+		System.out.println("Members sorted by E-mail: \n ");
 		for (Member m: members) {
-		    System.out.println(formaterar(m));
+		    System.out.println(formaterar(m) + " ");
 		}
 
 	}
+/*   public void printTeams() {						//Menyalt. 4
+		Logger.debugM();
+		ArrayList<Member> members = 
+			cr.getMembers();
+		Collections.sort(members, new MemberTeamComparator());
+		System.out.print("All members sorted by Teams: \n" );
+		for (Member m: members) {
+		    System.out.println(formaterar(m) + " ");
+		}
+    }
 
 
 /*
@@ -149,25 +180,30 @@ public class ClubHelper {
 			}
 	    }
 
+*/
+	 public void emailMember() {
+		String id = askUser("What's your ID?: \n");
+		int idint = Integer.parseInt(id);
 
- /*   public void emailMember(int id) {
-		Member m = cr.getMember(id);
+		Member m = cr.getMember(idint);
+		
 		if (m==null) { 
 			return ; 
 		}
 		
 		emailMember(m);
-   	} */
+   	} 
 
     public void emailMember(Member m) {
 		Logger.debugM();
+		
 
 		ArrayList<Member> parents = 
-					cr.getAdults(m);
+					cr.getAdults(m);  //Finds and returns the adults of a given member. if the member is an adult null is returned
 
-		System.out.print("Email to " + m.getName() + "");
+		System.out.print("Email to " + m.getName());
 		if (parents==null || parents.size()==0) { 
-		    System.out.println("<" + m.getEmail() + ">"); 
+		    System.out.println(" <" + m.getEmail() + ">"); 
 		} 
 		else {
 		    System.out.println(" via parents:");
@@ -176,16 +212,6 @@ public class ClubHelper {
 	   		}
 		}
     }
-
-    public void printParents(int id) {
-		Member m = 
-			cr.getMember(id);
-		if (m==null) { 
-			return ; 
-		}
-	
-    }
-
 
 
 }
