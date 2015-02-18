@@ -1,6 +1,5 @@
 package club;
 
-//import myprogram.hmi.cli.ClubHelper;
 import com.sandklef.edu.ConsoleMenu.*;
 
 public class Menu {
@@ -38,7 +37,7 @@ public class Menu {
 
 		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
-			    ch.printMembers(); 
+			    ch.printID(); 
 			} 
 
 		},"List members in order of ID" ); //Alternativ 3= Medlemmar efter ID
@@ -58,10 +57,11 @@ public class Menu {
 		},"List members of a Team" ); //Alternatv 4= Lista medlemmar i ordning efter lag
 
 		menu.addMenuItem(new MenuItem(){
-					public void menuItemSelected(ConsoleMenuEvent e) { 
-					    ch.printTeams(); 
-					} 
-				},"List parents in a team" ); //Alternativ 6= Lista alla föräldrar i  ett lag
+			public void menuItemSelected(ConsoleMenuEvent e) { 
+				
+				ch.printParents(); 
+			} 
+		},"List parents in a team" ); //Alternativ 6= Lista alla föräldrar i  ett lag
 
 		menu.addMenuItem(new MenuItem(){
 					public void menuItemSelected(ConsoleMenuEvent e) { 

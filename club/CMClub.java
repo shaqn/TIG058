@@ -18,8 +18,8 @@ public class CMClub {
 		String propValue = System.getProperty(prop);
 		if (propValue!=null) {
 		    System.out.println(s + propValue );
-		}
-    }
+			}
+	    }
 
     public static void main(String[] args) {
 		final ClubHelper ch = new ClubHelper();
