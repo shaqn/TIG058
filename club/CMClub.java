@@ -20,7 +20,7 @@ import tig058.handin01.log.Logger;
 */
 public class CMClub {
 
-/*
+/**
 * A method that prints an aoutomatic input 
 */
     public static void printProp(String s, String prop) {
@@ -30,7 +30,7 @@ public class CMClub {
 			}
 	    }
 
-/*
+/**
 *A method that gets a menu of the username 
 *
 */
@@ -56,14 +56,14 @@ public class CMClub {
 		m.run();
 
 		}
-/*
+/**
 *If --member is inprinted by the caller: a list of all members will be listed
 * the method printMembersAll(); is found in CLubHelper 
 */
 		else if(args[0].equals("--members")){
 			ch.printMembersAll();
 
-/*
+/**
 *If --teams is inprinted by the caller: a list of all teams will be listed
 *the method printMembersAll(); is found in CLubHelper 
 */
