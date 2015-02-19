@@ -10,19 +10,19 @@ import com.sandklef.edu.ConsoleMenu.*;
 public class Menu {
     
     ClubHelper ch ;
-
-
+	
     
     public Menu(ClubHelper c) {
 		ch = c;
     }
-
+   
     public void run() {
 
 	   	ConsoleMenu menu = new ConsoleMenu("-----===< Club Manager >===----- \n");
 
 
 	   		menu.addMenuItem(new MenuItem(){
+
 			public void menuItemSelected(ConsoleMenuEvent e) { 
 			   System.out.println();
 			} 
@@ -32,6 +32,8 @@ public class Menu {
 * Calls for the method  printMembersAlphaFirstName(); in ClubHelper.
 */
 	   	menu.addMenuItem(new MenuItem(){
+
+	
 			public void menuItemSelected(ConsoleMenuEvent e) { 
 			    ch.printMembersAlphaFirstName(); 
 			} 

@@ -31,7 +31,8 @@ public class CMClub {
 	    }
 
 /**
-*A method that gives a menu of the username.
+*A method that gives a menu of the username, 
+*the main method, gives the entire menu.
 */
 	public static void main(String[] args) {
 
