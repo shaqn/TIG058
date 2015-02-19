@@ -20,12 +20,14 @@ public class ClubHelper {
     private ClubRegistry cr;
     private Member mem;
 /**
-* A method which formats the print
+* A method which formats the print for ID, Name, Age, Team and Parents
 */
     public String formaterat(Member m){ 		
     	return String.format("ID: %-10d Name: %-25s Age: %-10d Team: %-10s Parents: %s %-15s", m.getId(), m.getName(), m.getAgeThisYear(), m.getTeam(), m.getParents(), m.isParent());
     }
-
+/**
+* A method which formats the print for ID, Name, Age and Team
+*/
     public String formaterar(Member m){
     	return String.format("ID: %-10d Name: %-25s Age: %-10d Team: %-10s", m.getId(), m.getName(), m.getAgeThisYear(), m.getTeam());
     }
@@ -49,9 +51,9 @@ public class ClubHelper {
     }
 
  /**
-* A two methods which are made for input 
+* A method that is made for input 
 * --members : returns a list of all members
-* --teams   : returns a list of all teams
+* 
 */
       public void printMembersAll() {  	 // --members (If --members is inprinted by  the caller: All the members will be listed )
 		Logger.debugM();
@@ -63,6 +65,11 @@ public class ClubHelper {
 		    System.out.println(formaterar(m));
 		}
     }
+
+ /**
+ * A method that is made for input 
+ * --teams   : returns a list of all teams
+ */
 
     public void printTeamsAll() {  	 // --teams (If --teams is inprinted by  the caller: All the teams will be listed )
 		Logger.debugM();
@@ -169,8 +176,7 @@ public class ClubHelper {
 
 /**
 * A method that lists e-mails in order by a member ordered by the caller. 
-* Returns a list of e-mail(s) depending on the ID inserted by the user, 
-* if the member isn't an adult (18Y/O) the e-mail of the members parents will be listed
+* 
 */
 	 public void emailMember() {						//Menualt. 7 
 		String id = askUser("What's your ID?: \n");
@@ -185,6 +191,8 @@ public class ClubHelper {
 		emailMember(m);
    	} 
 /**
+* Returns a list of e-mail(s) depending on the ID inserted by the user, 
+* if the member isn't an adult (18Y/O) the e-mail of the members parents will be listed
 * @param m The member for which you want to print the email
 *
 */
