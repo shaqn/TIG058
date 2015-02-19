@@ -168,8 +168,8 @@ public class ClubHelper {
     }
 
 /**
-* A method that lists e-mails in order by a member ordered by the caller
-* returns a list of e-mail(s) depending on the ID inserted by the user
+* A method that lists e-mails in order by a member ordered by the caller. 
+* Returns a list of e-mail(s) depending on the ID inserted by the user, 
 * if the member isn't an adult (18Y/O) the e-mail of the members parents will be listed
 */
 	 public void emailMember() {						//Menualt. 7 
@@ -186,6 +186,7 @@ public class ClubHelper {
    	} 
 /**
 * @param m The member for which you want to print the email
+*
 */
     public void emailMember(Member m) {
 		Logger.debugM();
