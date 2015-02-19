@@ -11,15 +11,12 @@ public class Menu {
     
     ClubHelper ch ;
 
-/*
-*ZAAAAAAAAAKIIIIIIIIIIIAAAAAAAAA? Ska vi kommentera här????
-*/    
+
+    
     public Menu(ClubHelper c) {
 		ch = c;
     }
-/*
-* KOMMENTERA HÄR? BEHÖVS DET? 
-*/
+
     public void run() {
 
 	   	ConsoleMenu menu = new ConsoleMenu("-----===< Club Manager >===----- \n");
@@ -31,8 +28,8 @@ public class Menu {
 			} 
 		}," " );
 /**
-* Aternative 1= Members in alphabetic order by first name
-* calls for the method  printMembersAlphaFirstName() in ClubHelper
+* Aternative 1= Members in alphabetic order by first name.
+* Calls for the method  printMembersAlphaFirstName(); in ClubHelper.
 */
 	   	menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
@@ -40,8 +37,8 @@ public class Menu {
 			} 
 		},"List Members in order of First name" ); 
 /**
-*Aternative 2= Members in alphabetic order by surname
-*calls for the method  printMembersAlpha() in ClubHelper
+*Aternative 2= Members in alphabetic order by surname.
+*Calls for the method  printMembersAlpha(); in ClubHelper.
 */
 		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
@@ -49,9 +46,9 @@ public class Menu {
 			} 
 		},"List Members in order of Surname" );  
 
-/**Alternative 3= Members in order by ID
-*calls for the method  printID() in ClubHelper
-*
+/**
+*Alternative 3= Members in order by ID.
+*calls for the method  printID(); in ClubHelper.
 */
 		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
@@ -60,9 +57,9 @@ public class Menu {
 
 		},"List Members in order of ID" ); 
 		
-/*Alternative 4= Members in order by Teams	
-*calls for the method printTeams() in ClubHelper
-*
+/*
+*Alternative 4= Members in order by Teams.	
+*calls for the method printTeams(); in ClubHelper.
 */		
 		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
@@ -72,9 +69,9 @@ public class Menu {
 		},"List Members in order of Team" ); 
 
 
-/*Alternatv 4= Lists members in order of team
-*calls for the method  printTeamMembers() in ClubHelper
-*
+/*
+*Alternatv 4= Lists members in order of team.
+*calls for the method  printTeamMembers(); in ClubHelper.
 */
 		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
@@ -84,8 +81,8 @@ public class Menu {
 		},"List Members of a Team" ); 
 
 /*
-* Alternativ 6= Lists all parents in a team
-* calls for the method  printParents() in ClubHelper
+* Alternativ 6= Lists all parents in a team.
+* Calls for the method  printParents(); in ClubHelper.
 */
 		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 
@@ -94,8 +91,9 @@ public class Menu {
 			} 
 		},"List Parents in a Team" ); 
 
-/*Alternativ 7= Lists email of a member -> if the member is not an adult (18y/o): the email adres of the parents will be listed
-*calls for the method emailMember() in ClubHelper
+/*
+*Alternativ 7= Lists email of a member: if the member is not an adult (18y/o): the email adress of the parents will be listed.
+*Calls for the method emailMember(); in ClubHelper.
 */
 		menu.addMenuItem(new MenuItem(){
 			public void menuItemSelected(ConsoleMenuEvent e) { 

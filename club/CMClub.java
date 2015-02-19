@@ -21,7 +21,7 @@ import tig058.handin01.log.Logger;
 public class CMClub {
 
 /**
-* A method that prints an automatic input 
+* A method that prints an automatic input of the user.
 */
     public static void printProp(String s, String prop) {
 		String propValue = System.getProperty(prop);
@@ -31,8 +31,7 @@ public class CMClub {
 	    }
 
 /**
-*A method that gives a menu of the username 
-*
+*A method that gives a menu of the username.
 */
 	public static void main(String[] args) {
 
@@ -57,7 +56,7 @@ public class CMClub {
 
 		}
 /**
-*If --member is inprinted by the caller: a list of all members will be listed
+*If --member is inprinted by the caller: a list of all members will be listed.
 * the method printMembersAll(); is found in CLubHelper 
 */
 		else if(args[0].equals("--members")){
