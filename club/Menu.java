@@ -68,7 +68,7 @@ public class Menu {
 		},"List Members in order of Team" ); 
 
 
-/*Alternatv 4= Lista medlemmar i ordning efter lag
+/*Alternatv 4= Lists members in order of team
 *calls for the method  printTeamMembers() in ClubHelper
 *
 */
@@ -80,7 +80,7 @@ public class Menu {
 		},"List Members of a Team" ); 
 
 /*
-* Alternativ 6= Lista alla föräldrar i  ett lag
+* Alternativ 6= Lists all parents in a team
 * calls for the method  printParents() in ClubHelper
 */
 		menu.addMenuItem(new MenuItem(){
@@ -90,7 +90,7 @@ public class Menu {
 			} 
 		},"List Parents in a Team" ); 
 
-/*Alternativ 7= Lista e-post adresser -> om medlemmen skall e-post användas, om inte skall föräldrarnas e-post användas
+/*Alternativ 7= Lists email of a member -> if the member is not an adult (18y/o): the email adres of the parents will be listed
 *calls for the method emailMember() in ClubHelper
 */
 		menu.addMenuItem(new MenuItem(){

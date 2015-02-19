@@ -15,13 +15,13 @@ import tig058.handin01.log.Logger;
 //import myprogram.hmi.cli.ClubHelper;
 
 /**
-*A class that prints the menu of a user, todays date,a "Welcome To The Club"-text and thee menu for the alteratives.
+*A class that prints the menu of a user, todays date,a Welcome-text and the menualternatives.
 *
 */
 public class CMClub {
 
 /**
-* A method that prints an aoutomatic input 
+* A method that prints an automatic input 
 */
     public static void printProp(String s, String prop) {
 		String propValue = System.getProperty(prop);
@@ -31,9 +31,13 @@ public class CMClub {
 	    }
 
 /**
-*A method that gets a menu of the username 
+*A method that gives a menu of the username 
 *
 */
+
+
+
+
 	public static void main(String[] args) {
 
 		System.out.println("\n -----===< Club Manager >===----- \n");
