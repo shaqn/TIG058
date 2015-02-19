@@ -184,7 +184,9 @@ public class ClubHelper {
 		
 		emailMember(m);
    	} 
-
+/**
+* @param m The member for which you want to print the email
+*/
     public void emailMember(Member m) {
 		Logger.debugM();
 		
