@@ -15,7 +15,7 @@ import tig058.handin01.log.Logger;
 //import myprogram.hmi.cli.ClubHelper;
 
 /**
-*A class that prints the menu of a user, todays date,a Welcome-text and the menualternatives.
+*A class that prints the menu of the user, todays date, a Welcome-text and the menualternatives.
 *
 */
 public class CMClub {
@@ -34,10 +34,6 @@ public class CMClub {
 *A method that gives a menu of the username 
 *
 */
-
-
-
-
 	public static void main(String[] args) {
 
 		System.out.println("\n -----===< Club Manager >===----- \n");

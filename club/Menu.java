@@ -3,19 +3,23 @@ package club;
 import com.sandklef.edu.ConsoleMenu.*;
 
 /**
-* A class that contains options for the menu 
-* Returns calls (anrop?) from ClubHelper 
+* A class that contains options for the menu.
+* Returns calls (anrop?) from ClubHelper.
 *
 */
 public class Menu {
     
     ClubHelper ch ;
 
-    
+/*
+*ZAAAAAAAAAKIIIIIIIIIIIAAAAAAAAA? Ska vi kommentera här????
+*/    
     public Menu(ClubHelper c) {
 		ch = c;
     }
-
+/*
+* KOMMENTERA HÄR? BEHÖVS DET? 
+*/
     public void run() {
 
 	   	ConsoleMenu menu = new ConsoleMenu("-----===< Club Manager >===----- \n");
