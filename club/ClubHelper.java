@@ -15,7 +15,7 @@ public class ClubHelper {
     private ClubRegistry cr;
     private Member mem;
 
-    public String formaterat(Member m){
+    public String formaterat(Member m){ 		
     	return String.format("ID: %-10d Name: %-25s Age: %-10d Team: %-10s Parents: %s %-15s", m.getId(), m.getName(), m.getAgeThisYear(), m.getTeam(), m.getParents(), m.isParent());
     }
 
@@ -24,7 +24,7 @@ public class ClubHelper {
     }
 
 
-    public ClubHelper() {
+    public ClubHelper() {					
 		Logger.debug("Init system");
 		cr = ClubRegistry.getInstance();
     }
@@ -34,7 +34,7 @@ public class ClubHelper {
 		String input = console.readLine(s);
 		return input;
     }
-      public void printMembersAll() {  	 // --members
+      public void printMembersAll() {  	 // --members (If --members is inprinted by  the caller: All the members will be listed )
 		Logger.debugM();
 		ArrayList<Member> members = 
 			cr.getMembers();
@@ -55,7 +55,7 @@ public class ClubHelper {
 		    System.out.println(m);
 		}
     }
-     public void printMembersAlphaFirstName() {  	 //Menyalt. 1
+     public void printMembersAlphaFirstName() {  	 //Menyalt. 1 -A method that prints the members in alphabetic order by first name
 		Logger.debugM();
 		ArrayList<Member> members = 
 			cr.getMembers();
@@ -67,7 +67,7 @@ public class ClubHelper {
 		}
     } 
 
-    public void printMembersAlpha() {     		     // Menyalt. 2
+    public void printMembersAlpha() {     		     // Menyalt. 2 A method that prints the members in alphabetic order by surname
 		Logger.debugM();
 		ArrayList<Member> members = 
 		    cr.getMembers();
@@ -79,7 +79,7 @@ public class ClubHelper {
 		}
     }
 
-    public void printID() {							// Menyalt. 3
+    public void printID() {							// Menyalt. 3- A method that prints the members in order by ID
 		Logger.debugM();
 		ArrayList<Member> members = 
 		    cr.getMembers();
@@ -90,7 +90,7 @@ public class ClubHelper {
     }
  
 
-    public void printTeams() {						//Menyalt. 4
+    public void printTeams() {						//Menyalt. 4 A method that lists members in order by teams
 		Logger.debugM();
 		ArrayList<Member> members = 
 			cr.getMembers();
@@ -101,7 +101,7 @@ public class ClubHelper {
 		}
     }
 
-    public void printTeamMembers() {				//Menyalt. 5
+    public void printTeamMembers() {				//Menyalt. 5 A method that lists all members in order by team
 		Logger.debugM();
 		String team = askUser("What team do you want to list? ");
 		ArrayList<Member> members = 
@@ -115,7 +115,7 @@ public class ClubHelper {
 
 	}
 
-	    public void printParents() {				//Menyalt. 6
+	    public void printParents() {				//Menyalt. 6 A method that lists parents in oder by a team ordered by the caller
 		Logger.debugM();
 		String team = askUser("Which teams' parents do you want to list? ");
 		//String search = input.trim();
@@ -181,7 +181,7 @@ public class ClubHelper {
 	    }
 
 */
-	 public void emailMember() {
+	 public void emailMember() {						//Manu alt 7 A method that lists e-mail of a member, if the member isn't an adult (18Y/O) the e-mail of the members parents will be listed
 		String id = askUser("What's your ID?: \n");
 		int idint = Integer.parseInt(id);
 
