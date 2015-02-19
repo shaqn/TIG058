@@ -10,8 +10,8 @@ import tig058.handin01.log.Logger;
 import java.io.Console;
 
 /**
-* First two methods are formats
 * A class which contains methods for the club menu
+* 
 */
 
 
@@ -76,10 +76,10 @@ public class ClubHelper {
     }
 
 /**
-* Menualt. 1 A method that lists the members in alphabetic order of first name
+* A method that lists the members in alphabetic order of first name
 * returns a list of all members in order of first name
 */
-     public void printMembersAlphaFirstName() {  	
+     public void printMembersAlphaFirstName() {  		//Menualt. 1
 		Logger.debugM();
 		ArrayList<Member> members = 
 			cr.getMembers();
@@ -91,10 +91,10 @@ public class ClubHelper {
 		}
     } 
 /**
-* Menualt. 2 A method that lists the members in alphabetical order of surname
+* A method that lists the members in alphabetical order of surname
 * returns a formated list of all members in order of last name
 */
-    public void printMembersAlpha() {     		   
+    public void printMembersAlpha() {     		   //Menualt. 2
 		Logger.debugM();
 		ArrayList<Member> members = 
 		    cr.getMembers();
@@ -106,10 +106,10 @@ public class ClubHelper {
 		}
     }
 /**
-* Menualt. 3 A method that lists the members in order of ID
+* A method that lists the members in order of ID
 * returns a formated list of all members in order of ID number
 */
-    public void printID() {						
+    public void printID() {						//Menualt. 3 
 		Logger.debugM();
 		ArrayList<Member> members = 
 		    cr.getMembers();
@@ -120,11 +120,11 @@ public class ClubHelper {
     }
  
 /**
-* Menualt. 4 A method that lists members in order of team
+* A method that lists members in order of team
 * returns a list of all members in order of teams
 * Here a "MemberTeamComparator" has been created
 */
-    public void printTeams() {						
+    public void printTeams() {						//Menualt. 4 
 		Logger.debugM();
 		ArrayList<Member> members = 
 			cr.getMembers();
@@ -135,10 +135,10 @@ public class ClubHelper {
 		}
     }
 /**
-* Menualt. 5 A method that lists the members in a specific team
+* A method that lists the members in a specific team
 * returns a formated list of all members depending on the team inserted by the user
 */
-    public void printTeamMembers() {			
+    public void printTeamMembers() {			//Menualt. 5 
 		Logger.debugM();
 		String team = askUser("What team do you want to list? ");
 		ArrayList<Member> members = 
@@ -151,13 +151,12 @@ public class ClubHelper {
 
 	}
 /**
-* Menualt. 6 A method that lists parents in order of the team ordered by the caller
+* A method that lists parents in order of the team ordered by the caller
 * returns a formated list of all members parents depending on the team inserted by the user
 */
-	    public void printParents() {			
+	    public void printParents() {			//Menualt. 6 
 		Logger.debugM();
 		String team = askUser("Which teams' parents do you want to list? ");
-		//String search = input.trim();
 		ArrayList<Member> members = 
 			cr.getTeamMembers(team);
 
@@ -169,10 +168,11 @@ public class ClubHelper {
     }
 
 /**
-* Menualt. 7 A method that lists e-mails in order by a member ordered by the caller
+* A method that lists e-mails in order by a member ordered by the caller
 * returns a list of e-mail(s) depending on the ID inserted by the user
+* if the member isn't an adult (18Y/O) the e-mail of the members parents will be listed
 */
-	 public void emailMember() {						//Manu alt 7 A method that lists e-mail of a member, if the member isn't an adult (18Y/O) the e-mail of the members parents will be listed
+	 public void emailMember() {						//Menualt. 7 
 		String id = askUser("What's your ID?: \n");
 		int idint = Integer.parseInt(id);
 
