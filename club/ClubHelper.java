@@ -9,12 +9,19 @@ import tig058.handin01.member.MemberAlphaFirstnameComparator;
 import tig058.handin01.log.Logger;
 import java.io.Console;
 
+/**
+* First two methods are formats
+* A class which contains methods for the club menu
+*/
+
 
 public class ClubHelper {
 
     private ClubRegistry cr;
     private Member mem;
-
+/**
+* A method which formats the print
+*/
     public String formaterat(Member m){ 		
     	return String.format("ID: %-10d Name: %-25s Age: %-10d Team: %-10s Parents: %s %-15s", m.getId(), m.getName(), m.getAgeThisYear(), m.getTeam(), m.getParents(), m.isParent());
     }
@@ -23,17 +30,29 @@ public class ClubHelper {
     	return String.format("ID: %-10d Name: %-25s Age: %-10d Team: %-10s", m.getId(), m.getName(), m.getAgeThisYear(), m.getTeam());
     }
 
-
+/**
+* A classmethod which calls the ClubRegistry 
+*
+*/
     public ClubHelper() {					
 		Logger.debug("Init system");
 		cr = ClubRegistry.getInstance();
     }
-
+/**
+* A method which asks the user to input an answer, 
+* in this case a choice of menu 
+*/
     public String askUser(String s) {
 		Console console = System.console();
 		String input = console.readLine(s);
 		return input;
     }
+
+ /**
+* A two methods which are made for input 
+* --members : returns a list of all members
+* --teams   : returns a list of all teams
+*/
       public void printMembersAll() {  	 // --members (If --members is inprinted by  the caller: All the members will be listed )
 		Logger.debugM();
 		ArrayList<Member> members = 
@@ -45,7 +64,7 @@ public class ClubHelper {
 		}
     }
 
-    public void printTeamsAll() {  	 // --teams
+    public void printTeamsAll() {  	 // --teams (If --teams is inprinted by  the caller: All the teams will be listed )
 		Logger.debugM();
 		ArrayList<String> teams = 
 			cr.getTeams();
@@ -55,7 +74,12 @@ public class ClubHelper {
 		    System.out.println(m);
 		}
     }
-     public void printMembersAlphaFirstName() {  	 //Menyalt. 1 -A method that prints the members in alphabetic order by first name
+
+/**
+* Menualt. 1 A method that lists the members in alphabetic order of first name
+* returns a list of all members in order of first name
+*/
+     public void printMembersAlphaFirstName() {  	
 		Logger.debugM();
 		ArrayList<Member> members = 
 			cr.getMembers();
@@ -66,8 +90,11 @@ public class ClubHelper {
 		    System.out.println(formaterar(m));
 		}
     } 
-
-    public void printMembersAlpha() {     		     // Menyalt. 2 A method that prints the members in alphabetic order by surname
+/**
+* Menualt. 2 A method that lists the members in alphabetical order of surname
+* returns a formated list of all members in order of last name
+*/
+    public void printMembersAlpha() {     		   
 		Logger.debugM();
 		ArrayList<Member> members = 
 		    cr.getMembers();
@@ -78,8 +105,11 @@ public class ClubHelper {
 		    System.out.println(formaterar(m));
 		}
     }
-
-    public void printID() {							// Menyalt. 3- A method that prints the members in order by ID
+/**
+* Menualt. 3 A method that lists the members in order of ID
+* returns a formated list of all members in order of ID number
+*/
+    public void printID() {						
 		Logger.debugM();
 		ArrayList<Member> members = 
 		    cr.getMembers();
@@ -89,8 +119,12 @@ public class ClubHelper {
 		}
     }
  
-
-    public void printTeams() {						//Menyalt. 4 A method that lists members in order by teams
+/**
+* Menualt. 4 A method that lists members in order of team
+* returns a list of all members in order of teams
+* Here a "MemberTeamComparator" has been created
+*/
+    public void printTeams() {						
 		Logger.debugM();
 		ArrayList<Member> members = 
 			cr.getMembers();
@@ -100,22 +134,27 @@ public class ClubHelper {
 		    System.out.println(formaterar(m) + " ");
 		}
     }
-
-    public void printTeamMembers() {				//Menyalt. 5 A method that lists all members in order by team
+/**
+* Menualt. 5 A method that lists the members in a specific team
+* returns a formated list of all members depending on the team inserted by the user
+*/
+    public void printTeamMembers() {			
 		Logger.debugM();
 		String team = askUser("What team do you want to list? ");
 		ArrayList<Member> members = 
 			cr.getTeamMembers(team);
-		//Collections.sort(members, new MemberAlphaComparator());
-
+		
 		System.out.println("Members in " + team + ":");
 		for (Member m: members) {
 		    System.out.println(formaterar(m));
 		}
 
 	}
-
-	    public void printParents() {				//Menyalt. 6 A method that lists parents in oder by a team ordered by the caller
+/**
+* Menualt. 6 A method that lists parents in order of the team ordered by the caller
+* returns a formated list of all members parents depending on the team inserted by the user
+*/
+	    public void printParents() {			
 		Logger.debugM();
 		String team = askUser("Which teams' parents do you want to list? ");
 		//String search = input.trim();
@@ -129,57 +168,9 @@ public class ClubHelper {
 		}
     }
 
-
- /*   public void printEmail() {
-		Logger.debugM();
-		ArrayList<Member> members = 
-			cr.getMembers();
-		Collections.sort(members, new MemberEmailComparator());
-
-		System.out.println("Members sorted by E-mail: \n ");
-		for (Member m: members) {
-		    System.out.println(formaterar(m) + " ");
-		}
-
-	}
-/*   public void printTeams() {						//Menyalt. 4
-		Logger.debugM();
-		ArrayList<Member> members = 
-			cr.getMembers();
-		Collections.sort(members, new MemberTeamComparator());
-		System.out.print("All members sorted by Teams: \n" );
-		for (Member m: members) {
-		    System.out.println(formaterar(m) + " ");
-		}
-    }
-
-
-/*
-    public void printTeamMembers(String team) {
-			Logger.debugM();
-			ArrayList<Member> members = // Returns a list of all the members playing in the team specified by the caller
-				cr.getTeamMembers(team);
-			Collections.sort(members, new MemberAlphaComparator());
-
-			System.out.println("Members in " + team + ":");
-			for (Member m: members) {
-			    System.out.println(m);
-			}
-	    }     
-*/
-
-	/*   public void emailMember(int id) {
-			Member m = cr.getMember(id);
-			if (m==null) { 
-				return ; 
-			}
-			emailMember(m);
-			System.out.println("Members:");
-			for (Member mem: members) {
-			    System.out.println(formaterat(m));
-			}
-	    }
-
+/**
+* Menualt. 7 A method that lists e-mails in order by a member ordered by the caller
+* returns a list of e-mail(s) depending on the ID inserted by the user
 */
 	 public void emailMember() {						//Manu alt 7 A method that lists e-mail of a member, if the member isn't an adult (18Y/O) the e-mail of the members parents will be listed
 		String id = askUser("What's your ID?: \n");
